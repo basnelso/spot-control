@@ -1,0 +1,107 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "spot control",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "PlayMusicIntent",
+          "slots": [],
+          "samples": [
+            "to play",
+            "test api function",
+            "Play music",
+            "Play"
+          ]
+        },
+        {
+          "name": "PauseMusicIntent",
+          "slots": [],
+          "samples": [
+            "to pause music",
+            "pause music",
+            "pause",
+            "to pause"
+          ]
+        },
+        {
+          "name": "GetDevicesIntent",
+          "slots": [],
+          "samples": [
+            "devices",
+            "what my devices are",
+            "what are my devices",
+            "to give me my devices",
+            "give me my devices",
+            "what devices do I have"
+          ]
+        },
+        {
+          "name": "PlayMusicOnDeviceIntent",
+          "slots": [
+            {
+              "name": "device_number",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "to test device {device_number}",
+            "play music on device {device_number}",
+            "play music on {device_number}",
+            "to play music on {device_number}",
+            "to play music on device {device_number}"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "PlayMusicOnDeviceIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "device_number",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1196170879285.266264086614"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1196170879285.266264086614",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "can you please tell me the number"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "17"
+}
